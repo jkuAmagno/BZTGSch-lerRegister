@@ -1,4 +1,4 @@
-class TEacherService:
+class TeacherService:
     def AddTeacher(connection, teacher):
         pass
 
