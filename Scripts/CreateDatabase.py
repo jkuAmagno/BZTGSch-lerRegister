@@ -28,7 +28,7 @@ ClassTable = """
         ,SchoolId INTEGER
     )"""
 TeacherTable = """
-    CREATE TABLE IF NOT EXISTS Teacher(
+    CREATE TABLE IF NOT EXISTS Teachers(
         Firstname VARCHAR(50)
         ,Lastname VARCHAR(50)
         ,Age INTEGER
