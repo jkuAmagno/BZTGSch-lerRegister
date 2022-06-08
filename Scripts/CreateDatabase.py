@@ -16,30 +16,26 @@ def CreateTable(query):
 
 StudentTable = """
     CREATE TABLE IF NOT EXISTS Students(
-        StudentId INTEGER PRIMARY KEY AUTOINCREMENT
-        ,Firstname VARCHAR(50)
+        Firstname VARCHAR(50)
         ,Lastname VARCHAR(50)
         ,Age INTEGER
         ,ClassId Integer
     )"""
 ClassTable = """ 
     CREATE TABLE IF NOT EXISTS Classes(
-        ClassId INTEGER PRIMARY KEY AUTOINCREMENT
-        ,Name VARCHAR(50)
+        Name VARCHAR(50)
         ,TeacherId INTEGER
         ,SchoolId INTEGER
     )"""
 TeacherTable = """
     CREATE TABLE IF NOT EXISTS Teacher(
-        TeacherId INTEGER PRIMARY KEY AUTOINCREMENT
-        ,Firstname VARCHAR(50)
+        Firstname VARCHAR(50)
         ,Lastname VARCHAR(50)
         ,Age INTEGER
     )"""
 SchoolTable = """
     CREATE TABLE IF NOT EXISTS Teacher(
-        SchoolId INTEGER PRIMARY KEY AUTOINCREMENT
-        ,Name VARCHAR(50)
+        Name VARCHAR(50)
         ,City VARCHAR(50)
         ,Zip VARCHAR(50)
     )"""
