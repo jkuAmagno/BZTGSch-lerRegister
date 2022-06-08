@@ -34,7 +34,7 @@ TeacherTable = """
         ,Age INTEGER
     )"""
 SchoolTable = """
-    CREATE TABLE IF NOT EXISTS Teacher(
+    CREATE TABLE IF NOT EXISTS Schools(
         Name VARCHAR(50)
         ,City VARCHAR(50)
         ,Zip VARCHAR(50)
@@ -42,7 +42,7 @@ SchoolTable = """
 
 
 # Create Script
-CreateDatabase();
+CreateDatabase()
 CreateTable(StudentTable)
 CreateTable(ClassTable)
 CreateTable(TeacherTable)
