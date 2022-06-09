@@ -26,4 +26,17 @@ Hier als Beispiel der Service für die StudentTabelle.
 
 Testen der Services:
 Hier wurde wieder für jede Methode ein einfaches Script geschrieben womit überprüft wurde ob die Methode wie gewünscht funktioniert.
-//ToDo: Für eine Methode Bild zeigen.
+Beispiel:
+
+//Test StudentService
+//Test GetAllStudents()
+print("-------------------------------------")
+print("Test: GetAllStudents")
+result = stservice.GetAllStudents()
+print(result)
+
+//Test AddStudent()
+print("-------------------------------------")
+print("Test: AddStudent")
+stservice.AddStudent("Keno", "Lendzion", 25, 1)
+stservice.GetAllStudents()
