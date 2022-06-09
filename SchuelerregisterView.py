@@ -126,6 +126,26 @@ def __init__(self, root):
     GButton_195.place(x=680,y=440,width=74,height=30)
     GButton_195["command"] = self.GButton_195_command
 
+    GButton_119 = tk.Button(root)
+    GButton_119["bg"] = "#f0f0f0"
+    ft = tkFont.Font(family='Times', size=10)
+    GButton_119["font"] = ft
+    GButton_119["fg"] = "#000000"
+    GButton_119["justify"] = "center"
+    GButton_119["text"] = "Schüler Hinzufügen"
+    GButton_119.place(x=540, y=440, width=119, height=30)
+    GButton_119["command"] = self.GButton_119_command
+
+    GButton_37 = tk.Button(root)
+    GButton_37["bg"] = "#f0f0f0"
+    ft = tkFont.Font(family='Times', size=10)
+    GButton_37["font"] = ft
+    GButton_37["fg"] = "#000000"
+    GButton_37["justify"] = "center"
+    GButton_37["text"] = "Klasse Hinzufügen"
+    GButton_37.place(x=370, y=440, width=146, height=30)
+    GButton_37["command"] = self.GButton_37_command
+
     root.mainloop()
 
     def GButton_195_command(self):
@@ -135,3 +155,12 @@ def __init__(self, root):
 
         GListBox_436.insert(classes)
         GListBox_104.insert(students)
+
+
+    def GButton_119_command(self):
+        print("command")
+
+
+    def GButton_37_command(self):
+        print("command")
+
