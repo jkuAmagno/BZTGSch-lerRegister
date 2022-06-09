@@ -1,7 +1,9 @@
+from hashlib import new
+from msilib.schema import Class
 import sqlite3
+from unicodedata import name
 
 class ClassService:
-
     def AddClass(name, teacherId, schoolId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
@@ -21,7 +23,7 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
-    def GetAllClasses():
+    def GetAllClasses(self):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         sqlQuery = "SELECT class.ROWID, class.* FROM CLASSES AS class"
@@ -29,8 +31,10 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
-    def GetStudentsOfClass(connection, classId):
-        pass
-
-    
-    
+    def GetStudentsOfClass(classId):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        sqlquery = "SELECT student.* FROM Students AS student WHERE student.classId =" + str(classId)
+        cursor.execute(sqlquery)
+        content = cursor.fetchall()
+        return content
