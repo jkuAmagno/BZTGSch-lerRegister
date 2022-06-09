@@ -4,7 +4,7 @@ import tkinter.font as tkFont
 class App:
     def __init__(self, root):
         #setting title
-        root.title("Schulregister")
+        root.title("undefined")
         #setting window size
         width=800
         height=500
@@ -21,6 +21,7 @@ class App:
         GListBox_436["fg"] = "#333333"
         GListBox_436["justify"] = "center"
         GListBox_436.place(x=30,y=50,width=135,height=427)
+        GListBox_436["listvariable"] = "ClassList"
         GListBox_436["selectmode"] = "single"
 
         GListBox_104=tk.Listbox(root)
@@ -30,6 +31,7 @@ class App:
         GListBox_104["fg"] = "#333333"
         GListBox_104["justify"] = "center"
         GListBox_104.place(x=190,y=180,width=585,height=287)
+        GListBox_104["listvariable"] = "StudentList"
 
         GLabel_693=tk.Label(root)
         ft = tkFont.Font(family='Times',size=16)
@@ -61,7 +63,7 @@ class App:
         GLabel_98["fg"] = "#333333"
         GLabel_98["justify"] = "right"
         GLabel_98["text"] = "Nachname:"
-        GLabel_98.place(x=200,y=100,width=70,height=25)
+        GLabel_98.place(x=200,y=90,width=70,height=25)
 
         GLabel_28=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -70,6 +72,46 @@ class App:
         GLabel_28["justify"] = "right"
         GLabel_28["text"] = "Vorname:"
         GLabel_28.place(x=200,y=60,width=70,height=25)
+
+        GLabel_429=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_429["font"] = ft
+        GLabel_429["fg"] = "#333333"
+        GLabel_429["justify"] = "right"
+        GLabel_429["text"] = "Alter:"
+        GLabel_429.place(x=200,y=120,width=70,height=25)
+
+        GLabel_429=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_429["font"] = ft
+        GLabel_429["fg"] = "#333333"
+        GLabel_429["justify"] = "right"
+        GLabel_429["text"] = "Alter:"
+        GLabel_429.place(x=200,y=120,width=70,height=25)
+
+        GLabel_278=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_278["font"] = ft
+        GLabel_278["fg"] = "#333333"
+        GLabel_278["justify"] = "left"
+        GLabel_278["text"] = "label"
+        GLabel_278.place(x=300,y=60,width=450,height=25)
+
+        GLabel_102=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_102["font"] = ft
+        GLabel_102["fg"] = "#333333"
+        GLabel_102["justify"] = "left"
+        GLabel_102["text"] = "label"
+        GLabel_102.place(x=300,y=90,width=446,height=25)
+
+        GLabel_868=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_868["font"] = ft
+        GLabel_868["fg"] = "#333333"
+        GLabel_868["justify"] = "left"
+        GLabel_868["text"] = "label"
+        GLabel_868.place(x=300,y=120,width=450,height=25)
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
