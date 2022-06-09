@@ -20,7 +20,7 @@ class App:
         GListBox_436["font"] = ft
         GListBox_436["fg"] = "#333333"
         GListBox_436["justify"] = "center"
-        GListBox_436.place(x=30,y=50,width=135,height=427)
+        GListBox_436.place(x=30,y=50,width=135,height=382)
         GListBox_436["listvariable"] = "ClassList"
         GListBox_436["selectmode"] = "single"
 
@@ -30,7 +30,7 @@ class App:
         GListBox_104["font"] = ft
         GListBox_104["fg"] = "#333333"
         GListBox_104["justify"] = "center"
-        GListBox_104.place(x=190,y=180,width=585,height=287)
+        GListBox_104.place(x=190,y=180,width=567,height=251)
         GListBox_104["listvariable"] = "StudentList"
 
         GLabel_693=tk.Label(root)
@@ -112,6 +112,48 @@ class App:
         GLabel_868["justify"] = "left"
         GLabel_868["text"] = "label"
         GLabel_868.place(x=300,y=120,width=450,height=25)
+
+        GButton_195=tk.Button(root)
+        GButton_195["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times',size=10)
+        GButton_195["font"] = ft
+        GButton_195["fg"] = "#000000"
+        GButton_195["justify"] = "center"
+        GButton_195["text"] = "Update"
+        GButton_195.place(x=680,y=440,width=74,height=30)
+        GButton_195["command"] = self.GButton_195_command
+
+        GButton_119=tk.Button(root)
+        GButton_119["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times',size=10)
+        GButton_119["font"] = ft
+        GButton_119["fg"] = "#000000"
+        GButton_119["justify"] = "center"
+        GButton_119["text"] = "Schüler Hinzufügen"
+        GButton_119.place(x=540,y=440,width=119,height=30)
+        GButton_119["command"] = self.GButton_119_command
+
+        GButton_37=tk.Button(root)
+        GButton_37["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times',size=10)
+        GButton_37["font"] = ft
+        GButton_37["fg"] = "#000000"
+        GButton_37["justify"] = "center"
+        GButton_37["text"] = "Klasse Hinzufügen"
+        GButton_37.place(x=370,y=440,width=146,height=30)
+        GButton_37["command"] = self.GButton_37_command
+
+    def GButton_195_command(self):
+        print("command")
+
+
+    def GButton_119_command(self):
+        print("command")
+
+
+    def GButton_37_command(self):
+        print("command")
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
