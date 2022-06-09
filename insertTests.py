@@ -11,11 +11,19 @@ teservice = Services.TeacherService.TeacherService
 scservice = Services.SchoolService.SchoolService
 
 # Test StudentService
-#stservice.AddStudent("keno", "lendzion", 69, 1)
-#result = stservice.GetAllStudents()
-#print(result)
+# Test GetAllStudents()
+print("-------------------------------------")
+print("Test: GetAllStudents")
+result = stservice.GetAllStudents()
+print(result)
 
-# Test ClassService
+# Test AddStudent()
+print("-------------------------------------")
+print("Test: AddStudent")
+stservice.AddStudent("Keno", "Lendzion", 25, 1)
+stservice.GetAllStudents()
+
+# Test ClassServices
 clservice.AddClassWithoutTeacherSchoolIds("KenosKlasse")
 result = clservice.GetAllClasses()
 print(result)
