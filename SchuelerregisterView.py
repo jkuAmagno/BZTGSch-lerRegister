@@ -4,7 +4,8 @@ import Services.ClassService as Klasse
 import Services.StudentService as student
 import Services.TeacherService as teacher
 
-def __init__(self, root):
+def __init__(self):
+
     root = tk.Tk()
     #setting title
     root.title("undefined")
@@ -17,6 +18,11 @@ def __init__(self, root):
     root.geometry(alignstr)
     root.resizable(width=False, height=False)
 
+    def class_selected(event):
+        selectedList = GListBox_436.curselection()
+        selectedClass = ",".join([GListBox_436.get(i) for i in selectedList])
+        UpdateView(selectedClass[0])
+
     GListBox_436=tk.Listbox(root)
     GListBox_436["borderwidth"] = "1px"
     ft = tkFont.Font(family='Times',size=10)
@@ -26,6 +32,7 @@ def __init__(self, root):
     GListBox_436.place(x=30,y=50,width=135,height=382)
     GListBox_436["listvariable"] = "ClassList"
     GListBox_436["selectmode"] = "single"
+    GListBox_436.bind('<<ListboxSelect>>', class_selected)
 
     GListBox_104=tk.Listbox(root)
     GListBox_104["borderwidth"] = "1px"
@@ -149,12 +156,19 @@ def __init__(self, root):
     root.mainloop()
 
     def GButton_195_command(self):
-        students = student.StudentService.GetAllStudents()
+        UpdateView()
+
+    def UpdateView(classId):
         classes = Klasse.ClassService.GetAllClasses()
+        students = Klasse.ClassService.GetStudentsOfClass(classId)
         teacherProperties = teacher.TeacherService.GetAllTeachers()
 
         GListBox_436.insert(classes)
         GListBox_104.insert(students)
+
+        GLabel_278.config(text=teacherProperties[1])
+        GLabel_102.config(text=teacherProperties[2])
+        GLabel_868.config(text=teacherProperties[3])
 
 
     def GButton_119_command(self):
@@ -163,4 +177,5 @@ def __init__(self, root):
 
     def GButton_37_command(self):
         print("command")
+
 
