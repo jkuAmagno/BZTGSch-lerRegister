@@ -1,7 +1,9 @@
+from hashlib import new
+from msilib.schema import Class
 import sqlite3
+from unicodedata import name
 
 class ClassService:
-
     def AddClass(name, teacherId, schoolId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
@@ -12,7 +14,18 @@ class ClassService:
         (name, teacherId, schoolId))
         connection.commit()
         connection.close()
-        
+
+    def AddClassWithoutTeacherSchoolIds(name):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+        INSERT INTO Classes 
+            VALUES(?,?,?)
+        """,
+        (name, -1, -1))
+        connection.commit()
+        connection.close()
+
     def GetClass(classId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
@@ -29,8 +42,10 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
-    def GetStudentsOfClass(connection, classId):
-        pass
-
-    
-    
+    def GetStudentsOfClass(classId):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        sqlquery = "SELECT student.* FROM Students AS student WHERE student.classId =" + str(classId)
+        cursor.execute(sqlquery)
+        content = cursor.fetchall()
+        return content
