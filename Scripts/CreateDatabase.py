@@ -1,5 +1,10 @@
 import sqlite3
 import os
+#from Services.ClassService import ClassService
+#from Services.TeacherService import TeacherService
+#from Services.SchoolService import SchoolService
+#from Services.StudentService import StudentService
+
 def CreateDatabase():
     if os.path.exists("Database/Register.db"):
         os.remove("Database/Register.db")
@@ -47,8 +52,23 @@ CreateTable(StudentTable)
 CreateTable(ClassTable)
 CreateTable(TeacherTable)
 CreateTable(SchoolTable)
+FillDatabase()
 
 
 
 
+#def FillDatabase():
+#    classService = ClassService()
+#    studentService = StudentService()
+#    teacherService  = TeacherService()
+#    schoolService = SchoolService()
+#
+#    schoolService.AddSchool("BBS Haarentor", "Oldenburg", 12345 )
+#   teacherService.AddTeacher("Max", "Lehrermann", 45)
+
+
+
+
+
+    
 
