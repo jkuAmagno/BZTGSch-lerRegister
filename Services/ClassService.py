@@ -4,7 +4,7 @@ import sqlite3
 from unicodedata import name
 
 class ClassService:
-    def AddClass(name, teacherId, schoolId):
+    def AddClass(self, name, teacherId, schoolId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         cursor.execute("""
@@ -15,7 +15,7 @@ class ClassService:
         connection.commit()
         connection.close()
 
-    def AddClassWithoutTeacherSchoolIds(name):
+    def AddClassWithoutTeacherSchoolIds(self, name):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         cursor.execute("""
@@ -26,7 +26,7 @@ class ClassService:
         connection.commit()
         connection.close()
 
-    def GetClass(classId):
+    def GetClass(self, classId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         sqlQuery = "SELECT class.ROWID, class.* FROM CLASSES AS class WHERE class.ROWID = " + str(classId) 
@@ -34,7 +34,7 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
-    def GetAllClasses():
+    def GetAllClasses(self):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         sqlQuery = "SELECT class.ROWID, class.* FROM CLASSES AS class"
@@ -42,7 +42,7 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
-    def GetStudentsOfClass(classId):
+    def GetStudentsOfClass(self, classId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         sqlquery = "SELECT student.* FROM Students AS student WHERE student.classId =" + str(classId)

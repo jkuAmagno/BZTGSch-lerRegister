@@ -1,6 +1,6 @@
 import sqlite3
 class TeacherService:
-    def AddTeacher(firstname, lastname, age):
+    def AddTeacher(self, firstname, lastname, age):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         cursor.execute("""
@@ -11,7 +11,7 @@ class TeacherService:
         connection.commit()
         connection.close()
 
-    def GetAllTeachers():
+    def GetAllTeachers(self):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         sqlQuery = "SELECT teacher.ROWID, teacher.* FROM Teachers AS teacher"
