@@ -12,22 +12,24 @@ scservice = Services.SchoolService.SchoolService
 
 # Test StudentService
 # Test GetAllStudents()
-print("-------------------------------------")
-print("Test: GetAllStudents")
-result = stservice.GetAllStudents()
-print(result)
+#print("-------------------------------------")
+#print("Test: GetAllStudents")
+#result = stservice.GetAllStudents()
+#print(result)
 
 # Test AddStudent()
-print("-------------------------------------")
-print("Test: AddStudent")
-stservice.AddStudent("Keno", "Lendzion", 25, 1)
-stservice.GetAllStudents()
+#print("-------------------------------------")
+#print("Test: AddStudent")
+#stservice.AddStudent("Keno", "Lendzion", 25, 1)
+#stservice.GetAllStudents()
 
 # Test ClassServices
-clservice.AddClassWithoutTeacherSchoolIds("KenosKlasse")
-result = clservice.GetAllClasses()
+clservice.AddClassWithoutTeacherSchoolIds(clservice, "KenosKlasse")
+clservice.AddClass("a", "12313", "1231231", "1")
+print(clservice.GetAllClasses(clservice))
+result = clservice.GetClassId(clservice, "FA2C")
 print(result)
-#clservice.AddClass("newclass", "12313", "1231231")
+
 
 #stservice.AddStudent("Keno", "Lendzion", 69, 1)
 #stservice.AddStudent("Keno", "Lendzion", 69, 1)

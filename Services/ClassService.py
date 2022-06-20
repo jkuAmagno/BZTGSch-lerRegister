@@ -42,6 +42,14 @@ class ClassService:
         content = cursor.fetchall()
         return content
 
+    def GetClassId(self, className):
+            connection = sqlite3.connect("Database/Register.db")
+            cursor = connection.cursor()
+            sqlQuery = "SELECT class.ROWID FROM Classes AS class WHERE class.Name = '" + str(className) + "'"
+            cursor.execute(sqlQuery)
+            content = cursor.fetchall()
+            return content
+
     def GetStudentsOfClass(self, classId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
