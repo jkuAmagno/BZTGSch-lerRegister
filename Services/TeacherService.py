@@ -18,3 +18,19 @@ class TeacherService:
         cursor.execute(sqlQuery)
         content = cursor.fetchall()
         return content
+
+    def GetTeacher(self, teacherId):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        sqlQuery = "SELECT teacher.ROWID, teacher.* FROM Teachers AS teacher WHERE teacher.ROWID = '" + str(teacherId) + "'"
+        cursor.execute(sqlQuery)
+        content = cursor.fetchall()
+        return content
+
+    def GetTeacherByName(self, Teachername):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        sqlQuery = "SELECT teacher.ROWID, teacher.* FROM Teachers AS teacher WHERE teacher.Lastname = '" + str(Teachername) + "'"
+        cursor.execute(sqlQuery)
+        content = cursor.fetchall()
+        return content
