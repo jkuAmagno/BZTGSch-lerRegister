@@ -1,5 +1,9 @@
 import tkinter as tk
+from tkinter import ttk
 import tkinter.font as tkFont
+import Services.ClassService as klass
+import Services.StudentService as student
+import Services.TeacherService as teacher
 
 def CreateMainWindow(self, root):
     #setting title    
@@ -12,12 +16,6 @@ def CreateMainWindow(self, root):
     alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
     root.geometry(alignstr)
     root.resizable(width=False, height=False)
-    """
-    def class_selected(event):
-    selectedList = self.ClassListBox.curselection()
-    selectedClass = ",".join([self.ClassListBox.get(i) for i in selectedList])
-    self.UpdateView(selectedClass[0])
-    """
 
     self.ClassListBox=tk.Listbox(root, )
     self.ClassListBox["borderwidth"] = "1px"
@@ -28,18 +26,19 @@ def CreateMainWindow(self, root):
     self.ClassListBox.place(x=30,y=50,width=135,height=382)
     self.ClassListBox["listvariable"] = "ClassList"
     self.ClassListBox["selectmode"] = "single"
-    #self.ClassListBox.bind('<<ListboxSelect>>', class_selected)
+    self.ClassListBox.bind('<<ListboxSelect>>', self.class_selected)
 
-    StudentsListBox=tk.Listbox(root)
-    StudentsListBox["borderwidth"] = "1px"
-    ft = tkFont.Font(family='Times',size=10)
-    StudentsListBox["font"] = ft
-    StudentsListBox["fg"] = "#333333"
-    StudentsListBox["justify"] = "center"
-    StudentsListBox.place(x=190,y=180,width=567,height=251)
-    StudentsListBox["listvariable"] = "StudentList"
+    # Add a Treeview widget
+    self.StudentTree = ttk.Treeview(root, column=("c1", "c2", "c3"), show='headings', height=5)
+    self.StudentTree.column("# 1")
+    self.StudentTree.heading("# 1", text="Vorname")
+    self.StudentTree.column("# 2")
+    self.StudentTree.heading("# 2", text="Nachname")
+    self.StudentTree.column("# 3")
+    self.StudentTree.heading("# 3", text="Alter")
+    self.StudentTree.place(x=190,y=180,width=567,height=251)
 
-    #region start labels
+    #region Labels
     GLabel_693=tk.Label(root)
     ft = tkFont.Font(family='Times',size=16)
     GLabel_693["font"] = ft
@@ -96,31 +95,30 @@ def CreateMainWindow(self, root):
     GLabel_429["text"] = "Alter:"
     GLabel_429.place(x=200,y=120,width=70,height=25)
 
-    GLabel_278=tk.Label(root)
+    self.FirstnameLabel=tk.Label(root)
     ft = tkFont.Font(family='Times',size=10)
-    GLabel_278["font"] = ft
-    GLabel_278["fg"] = "#333333"
-    GLabel_278["justify"] = "left"
-    GLabel_278["text"] = "label"
-    GLabel_278.place(x=300,y=60,width=450,height=25)
+    self.FirstnameLabel["font"] = ft
+    self.FirstnameLabel["fg"] = "#333333"
+    self.FirstnameLabel["justify"] = "left"
+    self.FirstnameLabel["text"] = ""
+    self.FirstnameLabel.place(x=300,y=60,width=450,height=25)
 
-    GLabel_102=tk.Label(root)
+    self.LastnameLabel=tk.Label(root)
     ft = tkFont.Font(family='Times',size=10)
-    GLabel_102["font"] = ft
-    GLabel_102["fg"] = "#333333"
-    GLabel_102["justify"] = "left"
-    GLabel_102["text"] = "label"
-    GLabel_102.place(x=300,y=90,width=446,height=25)
+    self.LastnameLabel["font"] = ft
+    self.LastnameLabel["fg"] = "#333333"
+    self.LastnameLabel["justify"] = "left"
+    self.LastnameLabel["text"] = ""
+    self.LastnameLabel.place(x=300,y=90,width=446,height=25)
 
-    GLabel_868=tk.Label(root)
+    self.AgeLabel=tk.Label(root)
     ft = tkFont.Font(family='Times',size=10)
-    GLabel_868["font"] = ft
-    GLabel_868["fg"] = "#333333"
-    GLabel_868["justify"] = "left"
-    GLabel_868["text"] = "label"
-    GLabel_868.place(x=300,y=120,width=450,height=25)
-
-    #endregion end labels
+    self.AgeLabel["font"] = ft
+    self.AgeLabel["fg"] = "#333333"
+    self.AgeLabel["justify"] = "left"
+    self.AgeLabel["text"] = ""
+    self.AgeLabel.place(x=300,y=120,width=450,height=25)
+    #endregion labels
 
     #region start Main Button
     UpdateButton=tk.Button(root)
@@ -152,5 +150,3 @@ def CreateMainWindow(self, root):
     AddClassButton["text"] = "Klasse Hinzufügen"
     AddClassButton.place(x=370, y=440, width=146, height=30)
     AddClassButton["command"] = self.AddClassButton_command
-
-
