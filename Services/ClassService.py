@@ -15,14 +15,14 @@ class ClassService:
         connection.commit()
         connection.close()
 
-    def AddClassWithoutTeacherSchoolIds(self, name):
+    def AddClassWithoutSchoolId(self, name, teacherId):
         connection = sqlite3.connect("Database/Register.db")
         cursor = connection.cursor()
         cursor.execute("""
         INSERT INTO Classes 
             VALUES(?,?,?)
         """,
-        (name, -1, -1))
+        (name, teacherId, -1))
         connection.commit()
         connection.close()
 
@@ -41,14 +41,14 @@ class ClassService:
         cursor.execute(sqlQuery)
         content = cursor.fetchall()
         return content
-
-    def GetClassId(self, className):
-            connection = sqlite3.connect("Database/Register.db")
-            cursor = connection.cursor()
-            sqlQuery = "SELECT class.ROWID FROM Classes AS class WHERE class.Name = '" + str(className) + "'"
-            cursor.execute(sqlQuery)
-            content = cursor.fetchall()
-            return content
+     
+    def GetClassByName(self, className):
+        connection = sqlite3.connect("Database/Register.db")
+        cursor = connection.cursor()
+        sqlQuery = "SELECT class.ROWID, class.* FROM CLASSES AS class WHERE class.Name = '" + str(className) +  "'"
+        cursor.execute(sqlQuery)
+        content = cursor.fetchall()
+        return content
 
     def GetStudentsOfClass(self, classId):
         connection = sqlite3.connect("Database/Register.db")
