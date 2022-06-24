@@ -25,18 +25,12 @@ Hier als Beispiel der Service für die StudentTabelle.
 //ToDo: Service Code hier einfügen.
 
 Testen der Services:
-Hier wurde wieder für jede Methode ein einfaches Script geschrieben womit überprüft wurde ob die Methode wie gewünscht funktioniert.
+Hier wurde wieder für jede Funktion in dem Service eine Test Funktion geschrieben womit überprüft wurde ob die Methode wie gewünscht funktioniert.
+
+Ist es gewollt eine Methode zu Testes da Sie geändert oder neugeschrieben wurde muss hierfür eine Test Funktion geschrieben und unter dem Kommentar "# Call specific  Tests Here" aufgerufen werden. 
+
+Es wurde auf Unit Test etc. verzichtet da wir keine Erfahrung mit diesen in Python haben und die Zeit dafür zu knapp war. 
 Beispiel:
+![PythonDatabaseTests](https://user-images.githubusercontent.com/23700090/175646719-65808b84-6194-4a27-b3c4-6d582e4f9a1e.gif)
 
-//Test StudentService
-//Test GetAllStudents()
-print("-------------------------------------")
-print("Test: GetAllStudents")
-result = stservice.GetAllStudents()
-print(result)
 
-//Test AddStudent()
-print("-------------------------------------")
-print("Test: AddStudent")
-stservice.AddStudent("Keno", "Lendzion", 25, 1)
-stservice.GetAllStudents()
