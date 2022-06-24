@@ -1,49 +1,54 @@
 # BZTGSch-lerRegister
-Ein SchülerProgramm für den unterricht
+Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Klasse FA2C.
 
 # Inhaltsverzeichniss
 1. [Datenbank](#Datenbank)
    1. [Plannung](#Plannung)
    2. [ERM](#ERM)
+   3. [Erstellung der Datenbank](#Datenbankerstellung)
+   4. [Testen der Datenbank](#TestenDerDatenbank)
 2. [Fazit](#Fazit)
 
-## Datenbank <a name="Datenbank"></a>  
-### Plannung: <a name="Plannung"></a> 
+<a name="Datenbank"></a>  
+## Datenbank
+<a name="Plannung"></a> 
+### Plannung: 
 Ziel was es eine Datenbank zu erstellen die Klassen, Schüler, Schulen und Lehrer verwaltet. Es wurde daraufhin eine Datenbank erstellt die 4 Tabellen enthält.
-
 1. Schools
-  - Hat eine Id
-  - Hat einen Namen
-  - Stadt
-  - ZIP
-  - Straßenname + Hausnummer
+   1. Hat eine Id
+   2. Hat einen Namen
+   3. Stadt
+   4. ZIP
+   5. Straßenname + Hausnummer
   
 2. Classes
-  - Hat eine Id
-  - Jede Klasse hat einen Lehrer
-  - Jede Klasse gehört zu einer Schule
-  - Hat einen Namen
+   1. Hat eine Id
+   2. Jede Klasse hat einen Lehrer
+   3. Jede Klasse gehört zu einer Schule
+   4. Hat einen Namen
   
 3. Teachers
-  - Hat eine Id
-  - Vornamen
-  - Nachnamen
-  - Alter
+   1. Hat eine Id
+   2. Vornamen
+   3. Nachnamen
+   4. Alter
   
 4. Students
-  - Hat eine Id
-  - Gehört zu einer Klasse
-  - Vornamen
-  - Nachnamen
-  - Alter
+   1. Hat eine Id
+   2. Gehört zu einer Klasse
+   3. Vornamen
+   4. Nachnamen
+   5. Alter
 
-<h3>ERM:</h3> <a name="ERM"></a>  
+<a name="ERM"></a>  
+### ERM: 
 
 ![image](https://user-images.githubusercontent.com/23700090/175651691-e1aa23f4-e13a-4a4c-8895-118429741f20.png)
 
 Wie in dem Bild gezeigt. Gibt es eine Schule die mehrere Klassen haben kann. Diese Klassen haben immer einen Lehrer und mehrere Schüler.
 
-<h2>Erstellung der Datenbank:</h2>
+<a name="Datenbankerstellung"></a>
+### Erstellung der Datenbank: 
 Zur erstellung der Datenbank wurde ein kleines Script geschrieben das das die Tabellen erstellt. Zum Testen wurde auch noch eins geschrieben das die Tabellen mit Testdaten füllt.
 
 // ToDo: Code des Scriptes hier zeigen.
@@ -53,7 +58,8 @@ Hier als Beispiel der Service für die StudentTabelle.
 
 //ToDo: Service Code hier einfügen.
 
-<h2>Testen der Services:</h2>
+<a name="TestenDerDatenbank"></a>
+### Testen der Datenbank:
 
 Hier wurde wieder für jede Funktion in dem Service eine Test Funktion geschrieben womit überprüft wurde ob die Methode wie gewünscht funktioniert.
 
