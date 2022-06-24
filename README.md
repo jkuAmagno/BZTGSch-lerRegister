@@ -1,9 +1,14 @@
 # BZTGSch-lerRegister
-
 Ein SchülerProgramm für den unterricht
 
-<h1>Datenbank</h1> 
-<h2>Plannung:</h2>
+# Inhaltsverzeichniss
+1. [Datenbank](#Datenbank)
+   1. [Plannung](#Plannung)
+   2. [ERM](#ERM)
+2. [Fazit](#Fazit)
+
+## Datenbank <a name="Datenbank"></a>  
+### Plannung: <a name="Plannung"></a> 
 Ziel was es eine Datenbank zu erstellen die Klassen, Schüler, Schulen und Lehrer verwaltet. Es wurde daraufhin eine Datenbank erstellt die 4 Tabellen enthält.
 
 1. Schools
@@ -12,24 +17,29 @@ Ziel was es eine Datenbank zu erstellen die Klassen, Schüler, Schulen und Lehre
   - Stadt
   - ZIP
   - Straßenname + Hausnummer
-3. Classes
+  
+2. Classes
   - Hat eine Id
   - Jede Klasse hat einen Lehrer
   - Jede Klasse gehört zu einer Schule
   - Hat einen Namen
-5. Teachers
+  
+3. Teachers
   - Hat eine Id
   - Vornamen
   - Nachnamen
   - Alter
-7. Students
+  
+4. Students
   - Hat eine Id
   - Gehört zu einer Klasse
   - Vornamen
   - Nachnamen
   - Alter
 
-//ToDo: Bild hier einfügen.
+<h3>ERM:</h3> <a name="ERM"></a>  
+
+![image](https://user-images.githubusercontent.com/23700090/175651691-e1aa23f4-e13a-4a4c-8895-118429741f20.png)
 
 Wie in dem Bild gezeigt. Gibt es eine Schule die mehrere Klassen haben kann. Diese Klassen haben immer einen Lehrer und mehrere Schüler.
 
@@ -53,4 +63,4 @@ Es wurde auf Unit Test etc. verzichtet da wir keine Erfahrung mit diesen in Pyth
 Beispiel:
 ![PythonDatabaseTests](https://user-images.githubusercontent.com/23700090/175646719-65808b84-6194-4a27-b3c4-6d582e4f9a1e.gif)
 
-
+## Fazit <a name="Fazit"></a>  
