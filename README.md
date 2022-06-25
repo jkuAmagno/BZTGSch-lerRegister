@@ -6,7 +6,9 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
      1. [Programm Idee](#PlanungProgrammIdee)
      2. [GUI](#PlanungGUI)
      3. [Datenbank](#PlanungDatenbank)
-     4. [Aufgabenverteilung](#PlanungAufgabenverteilung)
+          1. [ERM](#ERM)
+          2. [Datenmodell](#Datenmodell)
+     5. [Aufgabenverteilung](#PlanungAufgabenverteilung)
 2. [Durchführung](#Durchführung)
      1. [GUI](#DurchführungGUI)
      2. [Datenbank](#DurchführungDatenbank)
@@ -20,7 +22,7 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 ## Planung
 <a name="PlanungProgrammIdee"></a> 
 ### Programm Idee: 
-// TODO 
+Das Programm soll in der Lage sein für Schulen die Klassen, Lehrer und Schüler zu verwalten. Dazu soll es möglich sein diese anzuglegen und anzuzeigen. Es soll aber nicht möglich sein diese zu löschen aus zeitlichen gründen. In der GUI wird es möglich sein eine Klasse auszuwählen und anzuzeigen. 
 
 <a name="PlanungGUI"></a> 
 ### GUI
@@ -28,8 +30,19 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 
 <a name="PlanungDatenbank"></a> 
 ### Datenbank
-// TODO 
+Da das Programm Schulen, Klassen, Leherer und Schüler verwalten soll benötigen wir 4 Tabellen je eine für jeden dieser Punkte. Hierbei sollte eine Klasse immer zu einer Schule gehören. Ein Lehrer leitet eine Klasse und Schüler sind einer Klasse zugewiesen. Die einzelnen Attribute jeder Tabelle können im Datenmodell nachgeschaut werden.  
 
+<a name="ERM"></a>  
+### ERM: 
+Als erstes wurde ein ERM erstellt das die verschiedenen Beziehnungen der Tabellen anzeigt.
+![image](https://user-images.githubusercontent.com/23700090/175651691-e1aa23f4-e13a-4a4c-8895-118429741f20.png)
+
+<a name="Datenmodell"></a>
+### Datenmodell:
+Als nächstes wurde das Datenmodell erstellt und die Attribute der Tabellen hinzugefügt.
+![image](https://user-images.githubusercontent.com/23700090/175788152-a03a0482-1f85-43cb-9ad5-df04576cc873.png)
+
+Als das Team zufrieden war wurde mit der Umsetzung begonnen. 
 <a name="PlanungAufgabenverteilung"></a> 
 ### Aufgabenverteilung
 // TODO 
@@ -42,6 +55,19 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 
 <a name="DurchführungDatenbank"></a> 
 ### Datenbank
+Zur erstellung der Datenbank wurde ein kleines Script in Python geschrieben das das die einzelnen Tabellen erstellt. Als Sprache wurde Python vorgegen und für die Datenbank wurde SQLite3 gewählt da hierfür Tutorials zur Verfügung gestellt bekommen haben.   
+[Link zum Skriptfile](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/Services/CreateDatabase.py)
+
+Im unteren Bild wird die Datenbank erstellt. Es wurden mehrere Methoden dazu geschrieben. Die erste erstellt die Datenbank und löscht die alte falls eine vorhanden ist. Dann werden die einzelnen Tabellen erstellt. In der letzten Methode werden Daten zum Testen in die Datenbank geschrieben. Diese kann für die Produktion auskommentiert werden. 
+
+![image](https://user-images.githubusercontent.com/23700090/175788934-f04cb068-a7d7-4c9a-abaa-ac3319f2aa17.png)
+
+Um Daten in die Tabellen zu schreiben und zu lesen wurden für jede Tabelle ein Service geschrieben. Ein Service ist immer eine Klasse die nur Methoden enthält um mit den Tabellen in der Datenbank zu arbeiten.
+Hier als Beispiel der Service für die StudentTabelle.
+
+[Link zum Student Service](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/Services/StudentService.py)
+
+![image](https://user-images.githubusercontent.com/23700090/175789111-44807d72-795a-4933-89b2-28bf6c857d68.png)
 
 <a name="Überprüfung"></a> 
 ## Überprüfung
@@ -49,58 +75,7 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 <a name="ÜberprüfungDatenbankServices"></a> 
 ### Datenbank Services 
 
-<a name="Act"></a> 
-## Act
-
-Ziel was es eine Datenbank zu erstellen die Klassen, Schüler, Schulen und Lehrer verwaltet. Es wurde daraufhin eine Datenbank erstellt die 4 Tabellen enthält.
-1. Schools
-   1. Hat eine Id
-   2. Hat einen Namen
-   3. Stadt
-   4. ZIP
-   5. Straßenname + Hausnummer
-  
-2. Classes
-   1. Hat eine Id
-   2. Jede Klasse hat einen Lehrer
-   3. Jede Klasse gehört zu einer Schule
-   4. Hat einen Namen
-  
-3. Teachers
-   1. Hat eine Id
-   2. Vornamen
-   3. Nachnamen
-   4. Alter
-  
-4. Students
-   1. Hat eine Id
-   2. Gehört zu einer Klasse
-   3. Vornamen
-   4. Nachnamen
-   5. Alter
-
-<a name="ERM"></a>  
-### ERM: 
-
-![image](https://user-images.githubusercontent.com/23700090/175651691-e1aa23f4-e13a-4a4c-8895-118429741f20.png)
-
-Wie in dem Bild gezeigt. Gibt es eine Schule die mehrere Klassen haben kann. Diese Klassen haben immer einen Lehrer und mehrere Schüler.
-
-<a name="Datenbankerstellung"></a>
-### Erstellung der Datenbank: 
-Zur erstellung der Datenbank wurde ein kleines Script geschrieben das das die Tabellen erstellt. Zum Testen wurde auch noch eins geschrieben das die Tabellen mit Testdaten füllt.
-
-// ToDo: Code des Scriptes hier zeigen.
-
-Um Daten in die Tabellen zu schreiben und zu lesen wurden für jede Tabelle ein Service geschrieben. Ein Service ist immer eine Class die nur Methoden enthält um mit den Tabellen in der Datenbank zu arbeiten.
-Hier als Beispiel der Service für die StudentTabelle.
-
-//ToDo: Service Code hier einfügen.
-
-<a name="TestenDerDatenbank"></a>
-### Testen der Datenbank:
-
-Hier wurde wieder für jede Funktion in dem Service eine Test Funktion geschrieben womit überprüft wurde ob die Methode wie gewünscht funktioniert.
+Hier wurde wieder für jede Methode in dem jeweiligen Service eine Test Methode geschrieben womit überprüft wurde ob die Servicemethode wie gewünscht funktioniert.
 
 Ist es gewollt eine Methode zu Testes da Sie geändert oder neugeschrieben wurde muss hierfür eine Test Funktion geschrieben und unter dem Kommentar "# Call specific  Tests Here" aufgerufen werden. 
 
@@ -108,4 +83,5 @@ Es wurde auf Unit Test etc. verzichtet da wir keine Erfahrung mit diesen in Pyth
 Beispiel:
 ![PythonDatabaseTests](https://user-images.githubusercontent.com/23700090/175646719-65808b84-6194-4a27-b3c4-6d582e4f9a1e.gif)
 
-## Fazit <a name="Fazit"></a>  
+<a name="Act"></a> 
+## Act
