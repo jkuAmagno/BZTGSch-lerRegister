@@ -2,17 +2,56 @@
 Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Klasse FA2C.
 
 # Inhaltsverzeichniss
-1. [Datenbank](#Datenbank)
-   1. [Plannung](#Plannung)
-   2. [ERM](#ERM)
-   3. [Erstellung der Datenbank](#Datenbankerstellung)
-   4. [Testen der Datenbank](#TestenDerDatenbank)
-2. [Fazit](#Fazit)
+1. [Plannung](#Planung)
+     1. [Programm Idee](#PlanungProgrammIdee)
+     2. [GUI](#PlanungGUI)
+     3. [Datenbank](#PlanungDatenbank)
+     4. [Aufgabenverteilung](#PlanungAufgabenverteilung)
+2. [Durchführung](#Durchführung)
+     1. [GUI](#DurchführungGUI)
+     2. [Datenbank](#DurchführungDatenbank)
+3. [Überprüfung](#Überprüfung)
+     1. [Datenbank Services](#ÜberprüfungDatenbankServices)
+5. [Act?Wird es in der Doku benötigt?](#Act)
 
-<a name="Datenbank"></a>  
-## Datenbank
-<a name="Plannung"></a> 
-### Plannung: 
+
+
+<a name="Planung"></a>  
+## Planung
+<a name="PlanungProgrammIdee"></a> 
+### Programm Idee: 
+// TODO 
+
+<a name="PlanungGUI"></a> 
+### GUI
+// TODO 
+
+<a name="PlanungDatenbank"></a> 
+### Datenbank
+// TODO 
+
+<a name="PlanungAufgabenverteilung"></a> 
+### Aufgabenverteilung
+// TODO 
+
+<a name="Durchführung"></a> 
+## Durchführung
+
+<a name="DurchführungGUI"></a> 
+### GUI
+
+<a name="DurchführungDatenbank"></a> 
+### Datenbank
+
+<a name="Überprüfung"></a> 
+## Überprüfung
+
+<a name="ÜberprüfungDatenbankServices"></a> 
+### Datenbank Services 
+
+<a name="Act"></a> 
+## Act
+
 Ziel was es eine Datenbank zu erstellen die Klassen, Schüler, Schulen und Lehrer verwaltet. Es wurde daraufhin eine Datenbank erstellt die 4 Tabellen enthält.
 1. Schools
    1. Hat eine Id
