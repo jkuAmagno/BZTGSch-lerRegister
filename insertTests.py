@@ -10,50 +10,88 @@ stservice = Services.StudentService.StudentService
 teservice = Services.TeacherService.TeacherService
 scservice = Services.SchoolService.SchoolService
 
-# Test StudentService
-# Test GetAllStudents()
-#print("-------------------------------------")
-#print("Test: GetAllStudents")
-#result = stservice.GetAllStudents()
-#print(result)
+# Tests 
 
-# Test AddStudent()
-#print("-------------------------------------")
-#print("Test: AddStudent")
-#stservice.AddStudent("Keno", "Lendzion", 25, 1)
-#stservice.GetAllStudents()
+# School Service Tests
+def TestAddSchool():
+    print("-------------------------------------")
+    print("Test: TestAddSchool")        
+    scservice.AddSchool(scservice, "BBS HAARENTOR", "Oldenburg", 23155)
+    print(scservice.GetAllSchools(teservice))
 
-# Test ClassServices
-clservice.AddClassWithoutTeacherSchoolIds(clservice, "KenosKlasse")
-clservice.AddClass("a", "12313", "1231231", "1")
-print(clservice.GetAllClasses(clservice))
-result = clservice.GetClassId(clservice, "FA2C")
-print(result)
+def TestGetAllSchools():
+    print("-------------------------------------")
+    print("Test: TestGetAllSchools")        
+    result = scservice.GetAllSchools(scservice)
+    print(result)
 
+# Student Service Tests
+def TestGetAllStudents():
+    print("-------------------------------------")
+    print("Test: GetAllStudents")
+    result = stservice.GetAllStudents(stservice)
+    print(result)
 
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#stservice.AddStudent("Keno", "Lendzion", 69, 1)
-#singleClass = print(clservice.GetClass(2))
-#print(singleClass)
-#result = clservice.GetAllClasses()
-#result = clservice.GetStudentsOfClass(1)
-#
-#print(result)
+def TestAddStudent():
+    print("-------------------------------------")
+    print("Test: AddStudent")
+    stservice.AddStudent("Keno", "Lendzion", 25, 1)
+    print(stservice.GetAllStudents(stservice))
 
-# Test TeacherService
-#teservice.AddTeacher("keno", "lendzion", 69)
+# Teacher Service Tests
+def TestAddTeacher():
+    print("-------------------------------------")
+    print("Test: TestAddTeacher")        
+    teservice.AddTeacher(teservice, "Keno", "Lendzion", 223)
+    print(teservice.GetTeacherByName(teservice, "Lendzion"))
 
-#teservice.AddTe
-#result = teservice.GetAllTeachers()
-#print(result)
+def TestGetAllTeachers():
+    print("-------------------------------------")
+    print("Test: TestGetAllTeachers")   
+    print(teservice.GetAllTeachers(teservice))
 
-# Test TeacherService
-#scservice.AddSchool("keno", "lendzion", "69")
-#result = scservice.GetAllSchools()
-#print(result)
+def TestGetTeacher():
+    print("-------------------------------------")
+    print("Test: TestGetTeacher")     
+    print(teservice.GetTeacher(teservice, 1))
+
+def TestGetTeacherByName():
+    print("-------------------------------------")
+    print("Test: TestGetTeacherByName")        
+    print(teservice.GetTeacherByName(teservice, "Lendzion"))
+
+# Class Service Tests
+def TestAddClass():
+    print("-------------------------------------")
+    print("Test: TestAddClass")  
+    clservice.AddClass(clservice, "FA2C", 1, 1)
+    print(clservice.GetAllClasses(clservice))
+
+def TestAddClassWithoutSchoolId():
+    print("-------------------------------------")
+    print("Test: TestAddClassWithoutSchoolId")  
+    clservice.AddClassWithoutSchoolId(clservice, "FA2C", 1)
+    print(clservice.GetAllClasses(clservice))
+
+def TestGetClass():
+    print("-------------------------------------")
+    print("Test: TestGetClass")  
+    print(clservice.GetClass(clservice,1))
+
+def TestGetAllClasses():
+    print("-------------------------------------")
+    print("Test: TestGetAllClasses")  
+    print(clservice.GetAllClasses(clservice))
+
+def TestGetClassByName():
+    print("-------------------------------------")
+    print("Test: TestGetClassByName")  
+    print(clservice.GetClassByName(clservice,"FA2C"))
+
+def TestGetStudentsOfClass():
+    print("-------------------------------------")
+    print("Test: TestGetStudentsOfClass")  
+    print(clservice.GetStudentsOfClass(clservice, 1))
+    
+# Call specific  Tests Here
+TestGetStudentsOfClass()
