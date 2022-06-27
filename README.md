@@ -26,7 +26,24 @@ Das Programm soll in der Lage sein für Schulen die Klassen, Lehrer und Schüler
 
 <a name="PlanungGUI"></a> 
 ### GUI
-// TODO 
+Die GUI ist in 3 Fenster unterteilt. Dem Haupfenster, Schülerfenster und dem Klassenfenster.  
+
+#### Hauptfenster
+Im Hauptfenster befindet sich eine Liste der in der Datenbank verfügbaren Klassen. Die Liste wird angezeigt, wenn Sie auf „Update“ klicken, und wenn Sie eine Klasse aus der Liste auswählen, werden die Schüler und Lehrer für diese Klasse angezeigt.
+
+![image](https://user-images.githubusercontent.com/23700090/176032764-c9f3276b-96db-4745-be95-701ac701eaca.png)
+
+#### Schülerfenster
+Wenn auf "Schüler hinzufügen" geklickt wird öffnet sich das Schülerfenster. Hier kann der Name, Alter eingegeben werden oder den Schüler einer Klasse zuweisen.  
+Das zuweisen der Klasse erfolgt indem auf eine Klasse in der rechten Tabelle geklickt wird.
+
+![image](https://user-images.githubusercontent.com/23700090/176033394-ca7ff8f9-06bd-470a-99e8-7cc62c51ad9e.png)
+
+#### Klassenfenster
+Das Klassenfenster wird geöffnet indem auf den Knopf "Klasse hinzufüben" geklickt wird. Hier muss erst der Klassenname eingegeben werden dann der Lehrer ausgewählt werden. 
+
+![image](https://user-images.githubusercontent.com/23700090/176034086-f4cedcdf-e907-4202-8561-539ef12ee030.png)
+
 
 <a name="PlanungDatenbank"></a> 
 ### Datenbank
