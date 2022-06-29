@@ -52,18 +52,18 @@ Das Klassenfenster wird geöffnet indem auf den Knopf "Klasse hinzufüben" gekli
 Da das Programm Schulen, Klassen, Leherer und Schüler verwalten soll benötigen wir 4 Tabellen je eine für jeden dieser Punkte. Hierbei sollte eine Klasse immer zu einer Schule gehören. Ein Lehrer leitet eine Klasse und Schüler sind einer Klasse zugewiesen. Die einzelnen Attribute jeder Tabelle können im Datenmodell nachgeschaut werden.  
 
 <a name="ERM"></a>  
-### ERM: 
+#### ERM: 
 Als erstes wurde ein ERM erstellt das die verschiedenen Beziehnungen der Tabellen anzeigt.
 ![image](https://user-images.githubusercontent.com/23700090/175651691-e1aa23f4-e13a-4a4c-8895-118429741f20.png)
 
 <a name="Datenmodell"></a>
-### Datenmodell:
+#### Datenmodell:
 Als nächstes wurde das Datenmodell erstellt und die Attribute der Tabellen hinzugefügt.
 ![image](https://user-images.githubusercontent.com/23700090/175788152-a03a0482-1f85-43cb-9ad5-df04576cc873.png)
 
 Als das Team zufrieden war wurde mit der Umsetzung begonnen. 
 <a name="PlanungAufgabenverteilung"></a> 
-### Aufgabenverteilung:
+#### Aufgabenverteilung:
 - Keno: Datenbankplanung und Entwicklung / Doku
 - Mohammad, Justin: GUI + Logik
 
