@@ -19,36 +19,36 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 
 
 <a name="Planung"></a>  
-## Planung
+## Planung:
 <a name="PlanungProgrammIdee"></a> 
 ### Programm Idee: 
 Das Programm soll in der Lage sein für Schulen die Klassen, Lehrer und Schüler zu verwalten. Dazu soll es möglich sein diese anzuglegen und anzuzeigen. Es soll aber nicht möglich sein diese zu löschen aus zeitlichen gründen. In der GUI wird es möglich sein eine Klasse auszuwählen und anzuzeigen. 
 
 <a name="PlanungGUI"></a> 
-### GUI
+### GUI:
 Die GUI ist in 3 Fenster unterteilt. Dem Haupfenster, Schülerfenster und dem Klassenfenster.  
 
-#### Hauptfenster
+#### Hauptfenster:
 Im Hauptfenster befindet sich eine Liste der in der Datenbank verfügbaren Klassen. Die Liste wird angezeigt, wenn Sie auf „Update“ klicken, und wenn Sie eine Klasse aus der Liste auswählen, werden die Schüler und Lehrer für diese Klasse angezeigt.
 
 // TODO Bild ändern 420 ist nicht so gut in einer Doku. Plus vielleicht ein Gif draus machen
 
 ![image](https://user-images.githubusercontent.com/23700090/176032764-c9f3276b-96db-4745-be95-701ac701eaca.png)
 
-#### Schülerfenster
+#### Schülerfenster:
 Wenn auf "Schüler hinzufügen" geklickt wird öffnet sich das Schülerfenster. Hier kann der Name, Alter eingegeben werden oder den Schüler einer Klasse zuweisen.  
 Das zuweisen der Klasse erfolgt indem auf eine Klasse in der rechten Tabelle geklickt wird.
 
 ![image](https://user-images.githubusercontent.com/23700090/176033394-ca7ff8f9-06bd-470a-99e8-7cc62c51ad9e.png)
 
-#### Klassenfenster
+#### Klassenfenster:
 Das Klassenfenster wird geöffnet indem auf den Knopf "Klasse hinzufüben" geklickt wird. Hier muss erst der Klassenname eingegeben werden dann der Lehrer ausgewählt werden. 
 
 ![image](https://user-images.githubusercontent.com/23700090/176034086-f4cedcdf-e907-4202-8561-539ef12ee030.png)
 
 
 <a name="PlanungDatenbank"></a> 
-### Datenbank
+### Datenbank:
 Da das Programm Schulen, Klassen, Leherer und Schüler verwalten soll benötigen wir 4 Tabellen je eine für jeden dieser Punkte. Hierbei sollte eine Klasse immer zu einer Schule gehören. Ein Lehrer leitet eine Klasse und Schüler sind einer Klasse zugewiesen. Die einzelnen Attribute jeder Tabelle können im Datenmodell nachgeschaut werden.  
 
 <a name="ERM"></a>  
@@ -63,15 +63,15 @@ Als nächstes wurde das Datenmodell erstellt und die Attribute der Tabellen hinz
 
 Als das Team zufrieden war wurde mit der Umsetzung begonnen. 
 <a name="PlanungAufgabenverteilung"></a> 
-### Aufgabenverteilung
+### Aufgabenverteilung:
 - Keno: Datenbankplanung und Entwicklung / Doku
 - Mohammad, Justin: GUI + Logik
 
 <a name="Durchführung"></a> 
-## Durchführung
+## Durchführung:
 
 <a name="DurchführungGUI"></a> 
-### GUI
+### GUI:
 Für jedes Fenster wurde eine Datei erstellt. In dieser Datei werden alle ListBoxen, Entrys, Buttons und Labels mit Tkinter erstellt. 
 
 [Beispiel Schülerfenster](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/NewStudentView.py)
@@ -80,7 +80,7 @@ Die Funktionalität der einzelnen Fenster steht in der [MainViewCodeBehind](http
 ![image](https://user-images.githubusercontent.com/23700090/176378373-1058e73f-0291-4179-ad6c-832b97549cd1.png)
 
 <a name="DurchführungDatenbank"></a> 
-### Datenbank
+### Datenbank:
 Zur erstellung der Datenbank wurde ein kleines Script in Python geschrieben das das die einzelnen Tabellen erstellt. Als Sprache wurde Python vorgegen und für die Datenbank wurde SQLite3 gewählt da hierfür Tutorials zur Verfügung gestellt bekommen haben.   
 [Link zum Skriptfile](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/Services/CreateDatabase.py)
 
@@ -96,10 +96,10 @@ Hier als Beispiel der Service für die StudentTabelle.
 ![image](https://user-images.githubusercontent.com/23700090/175789111-44807d72-795a-4933-89b2-28bf6c857d68.png)
 
 <a name="Überprüfung"></a> 
-## Überprüfung
+## Überprüfung:
 
 <a name="ÜberprüfungDatenbankServices"></a> 
-### Datenbank Services 
+### Datenbank Services: 
 
 Hier wurde wieder für jede Methode in dem jeweiligen Service eine Test Methode geschrieben womit überprüft wurde ob die Servicemethode wie gewünscht funktioniert.
 
@@ -110,5 +110,5 @@ Beispiel:
 ![PythonDatabaseTests](https://user-images.githubusercontent.com/23700090/175646719-65808b84-6194-4a27-b3c4-6d582e4f9a1e.gif)
 
 <a name="Act"></a> 
-## Act
+## Act:
 Wenn etwas nicht funktioniert hat mussten wir Dinge anpassen. Das war Hauptsächlich nötig wenn die GUI eine Methode von der Datenbank benötigte die wir vorher nicht berücksichtigt hatten. Ein 2 Grund war Aufgaben neuverteilung durch Krankheit. Ansonsten musste nichts angepasst werden. 
