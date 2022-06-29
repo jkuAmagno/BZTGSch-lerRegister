@@ -24,6 +24,10 @@ Ein Schülerverwaltungs Programm für den Unterricht an der BBS Haarentor der Kl
 ### Programm Idee: 
 Das Programm soll in der Lage sein für Schulen die Klassen, Lehrer und Schüler zu verwalten. Dazu soll es möglich sein diese anzuglegen und anzuzeigen. Es soll aber nicht möglich sein diese zu löschen aus zeitlichen gründen. In der GUI wird es möglich sein eine Klasse auszuwählen und anzuzeigen. 
 
+### Aufgabenverteilung:
+- Keno: Datenbankplanung und Entwicklung / Doku
+- Mohammad, Justin: GUI + Logik
+
 <a name="PlanungGUI"></a> 
 ### GUI:
 Die GUI ist in 3 Fenster unterteilt. Dem Haupfenster, Schülerfenster und dem Klassenfenster.  
@@ -63,9 +67,6 @@ Als nächstes wurde das Datenmodell erstellt und die Attribute der Tabellen hinz
 
 Als das Team zufrieden war wurde mit der Umsetzung begonnen. 
 <a name="PlanungAufgabenverteilung"></a> 
-#### Aufgabenverteilung:
-- Keno: Datenbankplanung und Entwicklung / Doku
-- Mohammad, Justin: GUI + Logik
 
 <a name="Durchführung"></a> 
 ## Durchführung:
