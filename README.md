@@ -31,6 +31,8 @@ Die GUI ist in 3 Fenster unterteilt. Dem Haupfenster, Schülerfenster und dem Kl
 #### Hauptfenster
 Im Hauptfenster befindet sich eine Liste der in der Datenbank verfügbaren Klassen. Die Liste wird angezeigt, wenn Sie auf „Update“ klicken, und wenn Sie eine Klasse aus der Liste auswählen, werden die Schüler und Lehrer für diese Klasse angezeigt.
 
+// TODO Bild ändern 420 ist nicht so gut in einer Doku. 
+
 ![image](https://user-images.githubusercontent.com/23700090/176032764-c9f3276b-96db-4745-be95-701ac701eaca.png)
 
 #### Schülerfenster
@@ -62,13 +64,20 @@ Als nächstes wurde das Datenmodell erstellt und die Attribute der Tabellen hinz
 Als das Team zufrieden war wurde mit der Umsetzung begonnen. 
 <a name="PlanungAufgabenverteilung"></a> 
 ### Aufgabenverteilung
-// TODO 
+- Keno: Datenbankplanung und Entwicklung / Doku
+- Mohammad, Justin: GUI + Logik
 
 <a name="Durchführung"></a> 
 ## Durchführung
 
 <a name="DurchführungGUI"></a> 
 ### GUI
+Für jedes Fenster wurde eine Datei erstellt. In dieser Datei werden alle ListBoxen, Entrys, Buttons und Labels mit Tkinter erstellt. 
+
+[Beispiel Schülerfenster](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/NewStudentView.py)
+
+Die Funktionalität der einzelnen Fenster steht in der [MainViewCodeBehind](https://github.com/jkuAmagno/BZTGSch-lerRegister/blob/main/MainViewCodeBehind.py) Datei.
+![image](https://user-images.githubusercontent.com/23700090/176378373-1058e73f-0291-4179-ad6c-832b97549cd1.png)
 
 <a name="DurchführungDatenbank"></a> 
 ### Datenbank
@@ -102,3 +111,4 @@ Beispiel:
 
 <a name="Act"></a> 
 ## Act
+Wenn etwas nicht funktioniert hat mussten wir Dinge anpassen. Das war Hauptsächlich nötig wenn die GUI eine Methode von der Datenbank benötigte die wir vorher nicht berücksichtigt hatten. Ein 2 Grund war Aufgaben neuverteilung durch Krankheit. Ansonsten musste nichts angepasst werden. 
