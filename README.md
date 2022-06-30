@@ -35,7 +35,7 @@ Die GUI ist in 3 Fenster unterteilt. Dem Haupfenster, Schülerfenster und dem Kl
 #### Hauptfenster:
 Im Hauptfenster befindet sich eine Liste der in der Datenbank verfügbaren Klassen. Die Liste wird angezeigt, wenn Sie auf „Update“ klicken, und wenn Sie eine Klasse aus der Liste auswählen, werden die Schüler und Lehrer für diese Klasse angezeigt.
 
-![image](https://user-images.githubusercontent.com/23700090/176592008-0910782e-acd0-429c-bcb6-ad19a00fca59.png)
+![image](https://user-images.githubusercontent.com/23700090/176592183-02c1a163-1d4c-44f1-9f7a-d43ba2997582.png)
 
 #### Schülerfenster:
 Wenn auf "Schüler hinzufügen" geklickt wird öffnet sich das Schülerfenster. Hier kann der Name, Alter eingegeben werden oder den Schüler einer Klasse zuweisen.  
